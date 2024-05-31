@@ -49,7 +49,4 @@ jobs:
 
     - name: Upload test report
       if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-report
-        path: TestReportHtml/report.html
+      run: npx github-actions-ctrf ctrf/ctrf-report.json
