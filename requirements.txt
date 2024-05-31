@@ -2,6 +2,11 @@ GitPython==3.1.42
 pytest==8.2.1
 pytest-html==4.1.1
 pytest-metadata==3.1.1
+python-cli-commons==1.1.2
+python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
 python-gitlab==3.15.0
+pytz==2024.1
+pywatchman==1.4.1
+PyYAML==6.0.1
 selenium==4.21.0
-
