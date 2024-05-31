@@ -49,4 +49,4 @@ jobs:
 
     - name: Upload test report
       if: always()
-      run: npx github-actions-ctrf ctrf/ctrf-report.json
+      run: npx github-actions-ctrf TestReportJson/report.json
