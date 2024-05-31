@@ -1,7 +1,6 @@
-# Skip Burpees
+## Bookyway Scheduler
 
-## Execute a test with Pytest
+#### Execute test with Pytest
 ```
 pytest skip_burpees.py
 ```
-s
