@@ -1,3 +1,7 @@
+GitPython==3.1.42
 pytest==8.2.1
 pytest-html==4.1.1
 pytest-metadata==3.1.1
+python-gitlab==3.15.0
+selenium==4.21.0
+
