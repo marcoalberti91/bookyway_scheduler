@@ -43,7 +43,7 @@ jobs:
 
     - name: Run tests with pytest
       run: |
-        pytest skip_burpees.py --html=TestReportHtml/report.html
+        pytest *.py
       env:
         CI: true
 
