@@ -2,6 +2,8 @@ name: BookyWay scheduler - Python application
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 1'  # Runs at 6 AM UTC every Monday (8 AM Italian time)
 
 jobs:
   test:
