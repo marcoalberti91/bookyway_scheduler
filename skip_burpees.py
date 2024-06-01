@@ -63,7 +63,7 @@ class TestSkipBurpees():
       # Book course
       card = self.wait_for_element(By.XPATH, "//a[@class='c-card__link']")
       card.click()
-
+"""
       course_xpath = f"//div[@class='schedule-item__details' and .//span[text()='{lesson_type}'] and .//span[contains(text(), '{day}')]/following-sibling::span[contains(text(), '{hour}')]]"
       course = self.wait_for_element(By.XPATH, course_xpath)
       booking_text = course.text
@@ -91,3 +91,4 @@ class TestSkipBurpees():
               print("Confirmed selection")
 
           time.sleep(3)
+"""
