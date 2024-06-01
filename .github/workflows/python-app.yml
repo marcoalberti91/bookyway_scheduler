@@ -45,6 +45,8 @@ jobs:
       run: |
         pytest *.py
       env:
+        EMAIL: ${{ secrets.EMAIL }}
+        PASSWORD: ${{ secrets.PASSWORD }}
         CI: true
 
     - name: Upload test report
