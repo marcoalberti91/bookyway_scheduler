@@ -2,6 +2,8 @@ name: BookyWay scheduler - Python application
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 1'  # Runs at 6 AM UTC every Monday (8 AM Italian time)
 
 jobs:
   test:
@@ -18,20 +20,37 @@ jobs:
 
     - name: Install dependencies
       run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+        sudo apt-get install -y libnss3 libgconf-2-4 libxi6 libgdk-pixbuf2.0-0
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+
+    - name: Set up Chromedriver
+      uses: nanasess/setup-chromedriver@v2
+    
+    - name: Set up Xvfb and Chromedriver
+      run: |
+        export DISPLAY=:99
+        sudo Xvfb :99 -ac -screen 0 1280x1024x24 > /dev/null 2>&1 &
+        chromedriver --url-base=/wd/hub --verbose --log-path=chromedriver.log &
+      env:
+        DISPLAY: :99
+    
+    - name: Show Chromedriver log
+      run: cat chromedriver.log
 
     - name: Create test report directory
       run: mkdir -p TestReportHtml
 
     - name: Run tests with pytest
       run: |
-        pytest skip_burpees.py
+        pytest *.py
       env:
+        EMAIL: ${{ secrets.EMAIL }}
+        PASSWORD: ${{ secrets.PASSWORD }}
         CI: true
 
     - name: Upload test report
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-report
-        path: TestReportHtml/report.html
+      if: always()
+      run: npx github-actions-ctrf TestReportJson/report.json

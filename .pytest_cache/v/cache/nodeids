@@ -1,9 +1,0 @@
-[
-  "PyTestSecond.py::TryTesting::test_always_passes",
-  "PyTest_RegistrationNavigation.py::TestRegistrationNavigation::test_registrationNavigation",
-  "PyTest_skip_burpees.py::TestRegistrationNavigation::test_book_bjj",
-  "skip_burpees.py::TestRegistrationNavigation::test_book_bjj",
-  "skip_burpees.py::TestSkipBurpees::test_book_bjj",
-  "skip_burpees.py::TestSkipBurpees::test_book_lesson[Thu-19:00-Corso di BJJ]",
-  "skip_burpees.py::TestSkipBurpees::test_book_lesson[Tue-19:00-Corso di BJJ]"
-]

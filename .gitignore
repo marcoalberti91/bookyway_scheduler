@@ -1,2 +1,5 @@
 .env
 /TestReportHtml
+/TestReportJson
+/__pycache__
+/.pytest_cache
