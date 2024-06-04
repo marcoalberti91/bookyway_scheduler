@@ -73,8 +73,8 @@ class TestSkipBurpees():
       else:
           print(f"The {lesson_type} class on {day} at {hour} is not booked. Performing new booking.")
           course.click()
-          print(f"Verifying correct course: Corso di {lesson_type}")
-          self.wait_for_element(By.XPATH, f"//span[text()='Corso di {lesson_type}']")
+          print(f"Verifying correct course: {lesson_type}")
+          self.wait_for_element(By.XPATH, f"//span[text()='{lesson_type}']")
 
           # Check if the "Unsubscribe" button exists
           unsubscribe_button = self.driver.find_elements(By.XPATH, "//span[text()='Unsubscribe']")
