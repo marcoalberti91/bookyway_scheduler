@@ -73,8 +73,10 @@ class TestSkipBurpees():
       else:
           print(f"The {lesson_type} class on {day} at {hour} is not booked. Performing new booking.")
           course.click()
+          time.sleep(1)
           print(f"Verifying correct course: {lesson_type}")
           self.wait_for_element(By.XPATH, f"//span[text()='{lesson_type}']")
+          time.sleep(1)
 
           # Check if the "Unsubscribe" button exists
           unsubscribe_button = self.driver.find_elements(By.XPATH, "//span[text()='Unsubscribe']")
@@ -83,9 +85,12 @@ class TestSkipBurpees():
               print("Already subscribed")
           else:
               print("Not subscribed. Start new booking...")
+              time.sleep(1)
               book_button = self.wait_for_element(By.XPATH, "//span[text()='Book']")
               book_button.click()
               print("Clicked on Subscribe")
+              time.sleep(1)
               ok_button = self.wait_for_element(By.XPATH, "//button[text()='Ok']")
               ok_button.click()
               print("Confirmed selection")
+
